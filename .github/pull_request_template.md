@@ -7,10 +7,6 @@
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Bug fix (non-breaking change which fixes an issue)
 
-#### Dependencies
-
-- <em> Does this rely on wokr 
-
 ### Screenshots and/or screen recording 
 <em> This is optional, but helpful to PR reviewers.</em>
 
