@@ -1,0 +1,23 @@
+*  
+    { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+}
+body {
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 100%;
+  }
+#Div1{
+    background-color: lightgrey;
+    width: 100px;
+  
+   
+    margin: 20px
+
+  }
+  #joke2,#joke{
+      text-align: center;
+      background-color: aliceblue;
+  }
