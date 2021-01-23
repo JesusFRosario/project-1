@@ -19,7 +19,7 @@
 	var formSubmitHandler = function(event) {
 		//prevent form from "submitting" or else the rest won't work:
 		event.preventDefault();
-		//grab the name of the state the user input in the search field and store in stateAbbr variable declared above:
+		//grab the name of the state the user input in the search field and store in city variable declared above:
 		var stateAbbr = searchInputEl.value.trim();
 		stateAbbr.toLowerCase();
 		//if user entered data, fetch the data and output it. otherwise, throw errors as indicated:
@@ -59,6 +59,18 @@
 	}
 
 
-	//Step 2: Create event listener to listen for form submission (i.i.e, user enters state name and clicks Search) and then run the formSubmitHandler function we'll create in step 3 above.
+	//Step 2: Create event listener to listen for form submission (i.e, user enters state name and clicks Search) and then run the formSubmitHandler function we'll create in step 3 above.
 
 	searchFormEl.addEventListener('submit', formSubmitHandler);
+
+//Store in local storage -- <<<TO DO BECAUSE THIS BROKE>>>
+ var store = function() {
+  var stateName=document.getElementById("search-input").value;
+  localStorage.setItem("state"), JSON.stringify(stateName);
+  var content = JSON.parse(localStorage.getItem("state"))
+  var head = document.getElementById("header")
+  g = document.createElement('div');
+  g.setAttribute("id", "div-1");
+  g.innerHTML=content;
+	head.appendChild(g);
+ }
