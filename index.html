@@ -17,84 +17,115 @@
 
 <body>
 	<div class="container">
-	<!-- Navigation bar -->
-	<nav class="navbar pt-2 pb-4">
-		<div class="container">
-			<div class="navbar-end">
-				<a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/index.html" target="_blank">How to
-					Protect Yourself Against COVID-19
-				</a>
-			</div>
-	</nav>
-	<div class="columns">
-		<!-- left column -->
-		<div class="column is-2">
-			<h6>Search History</h6>
-			<ul id=>
-			</ul>
-		</div>
-		<div class="column is-5">
-			<!-- search form  -->
-		<h2 class="is-subtitle"> COVID-19 updates
-		</h2>
-		<div class="block">
-			<form action="submit" id="search-form">
-				<label class="label">Enter State Abbreviation </label>
-				<div class="field has-addons">
-					<p class="control">
-						<input id="search-input" type="text" class="input" placeholder="e.g., CA">
-					</p>
-					<div class="control">
-						<button id="search-btn" class="button is-primary">Search</button>
-					</div>
-			</form>
-		</div>
-		</div>
-		<!-- <form  class="field has-addons">
-			<div class="control">
-				<input id="search-input" class="input" type="text" placeholder="Search by state">
-			</div>
-				<button id="search-btn" type="submit">Search</button>
-		</form> -->
+		<!-- Navigation bar -->
+		<nav class="navbar pt-2 pb-4">
 			<div class="container">
-			<p>State: <span id="state-name"></span></p>
-			<p id="state-notes"><p>	
+				<div class="navbar-end">
+					<a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/index.html" target="_blank">How to
+						Protect Yourself Against COVID-19
+					</a>
+				</div>
+		</nav>
+		<div class="columns">
+			<!-- left column -->
+			<div class="column is-2">
+				<h6>Search History</h6>
+				<ul id=>
+				</ul>
+			</div>
+			<div class="column is-5">
+				<!-- search form  -->
+				<div class="block">
+					<form action="submit" id="search-form">
+						<label class="label">Search for updates by state </label>
+						<div class="field has-addons">
+							<p class="control">
+								<input id="search-input" type="text" class="input" placeholder="e.g., CA or California">
+							</p>
+							<div class="control">
+								<button id="search-btn" class="button is-primary">Search</button>
+							</div>
+					</form>
+				</div>
+			</div>
+			<!-- covid statistics container -->
+			<div class="container">
+				<div>
+					<h5 class="subtitle is-6">State: <span class="title is-5" id="state-name"></span></h5>
+				</div>
+				<div>
+					<h5 class="subtitle is-6">Total Positive Cases: <span class="title is-5" id="state-total-cases"></span></h5>
+				</div>
+				<div>
+					<h5 class="subtitle is-6">New Cases Reported Today: <span class="title is-5"
+							id="state-new-cases-today"></span></h5>
+				</div>
+				<div>
+					<h5 class="subtitle is-6">Currently Hospitalized: <span class="title is-5" id="state-hospitalized"></span>
+					</h5>
+				</div>
+				<div>
+					<h5 class="subtitle is-6">Currently in ICU: <span class="title is-5" id="state-icu"></span></h5>
+				</div>
+				<div>
+					<h5 class="subtitle is-6">Total Fatalities: <span class="title is-5" id="state-deaths"></span></h5>
+				</div>
+				<div>Last updated on: <span id="state-last-update"></span></h5>
+				</div>
+
+				<p id="state-notes">
+				<p>
 				<p id="primary-site"></p>
-				<p id="secondary-site"></p>	
+				<p id="secondary-site"></p>
+			</div>
 		</div>
-		</div>
-			<!-- right column - joke container -->
+
+		<!-- right column - joke container -->
 		<div class="column is-5">
 			<div class="container">
 				<h1 class="title has-text-centered">
 					COVID-19 is not a joke.
 				</h1>
 				<figure class="image">
-						<img src="/assets/cdc-k0KRNtqcjfw-unsplash.jpg" alt="image of COVID-19 ultrastructural morphology">
+					<img src="/assets/cdc-k0KRNtqcjfw-unsplash.jpg" alt="image of COVID-19 ultrastructural morphology">
 				</figure>
-					<h2 class="subtitle is-5 has-text-centered">
-						But, sometimes, laughter is the medicine.
-					</h2>
-					<div class="has-text-centered">
-						<button class="button is-medium is-info is-outlined has-text-centered" onclick="second()">Click to see a
-							joke
-						</button>
-						<div class="container has-text-centered">
-							<div id="joke2"></div>
-							<div id="joke"></div>
-						</div>
+				<h2 class="subtitle is-5 has-text-centered">
+					But, sometimes, laughter is the medicine.
+				</h2>
+				<div class="has-text-centered">
+					<button class="button is-medium is-info is-outlined has-text-centered" onclick="second()">Click to see a
+						joke
+					</button>
+					<div class="container has-text-centered">
+						<div id="joke2"></div>
+						<div id="joke"></div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
 	<!-- footer -->
 	<div class="content has-text-centered pt-6">
 		<p>©2021 by Team 8
 		</p>
 	</div>
-</div>	
-	<script src="/assets/js/app.js"></script>
-	<script src="/assets/js/script.js"></script>
+
+	<!-- error modal if state isn't found-->
+	<div id="error-modal" class="modal">
+		<div class="modal-background">
+			<div class="modal-content">
+				<section class="modal-card-body">
+					<div class="content">
+						<h4>State not found. Please try again.</h4>
+						<button class="button is-small is-primary" id="closebtn">OK</button>
+				</section>
+				<div>
+				</div>
+
+				<script src="/assets/js/state_abbr.js"></script>
+				<script src="/assets/js/app.js"></script>
+				<script src="/assets/js/script.js"></script>
 </body>
+
 </html>
