@@ -102,7 +102,10 @@ function convertRegion(input, to) {
         for (region of regions) {
             if (region[1] == input) {
                 return (region[0]);
-            }
+						}
+						if (region[0].toUpperCase() == input) {
+							return (region[0]);
+					}
         }
     }
 }
